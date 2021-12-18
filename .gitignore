@@ -1,0 +1,6 @@
+baseline/CCPM-baseline-main/results_guwen/
+save/
+baseline/CCPM-baseline-main/results/
+baseline/CCPM-baseline-main/results_mt5/
+baseline/CCPM-baseline-main/results_o/
+*.pkl

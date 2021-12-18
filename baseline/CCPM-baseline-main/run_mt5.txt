@@ -1,0 +1,239 @@
+12/19/2021 00:28:48 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 4distributed training: False, 16-bits training: True
+12/19/2021 00:28:48 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=4,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+bf16=False,
+bf16_full_eval=False,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_find_unused_parameters=None,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_steps=None,
+evaluation_strategy=IntervalStrategy.NO,
+fp16=True,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_model_id=None,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0005,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=-1,
+log_level_replica=-1,
+log_on_each_node=True,
+logging_dir=results_mt5/runs/Dec19_00-28-44_ubuntu,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=20.0,
+output_dir=results_mt5/,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=20,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+remove_unused_columns=True,
+report_to=[],
+resume_from_checkpoint=None,
+run_name=results_mt5/,
+save_on_each_node=False,
+save_steps=3000,
+save_strategy=IntervalStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+tf32=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_legacy_prediction_loop=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+xpu_backend=None,
+)
+12/19/2021 00:28:49 - WARNING - datasets.builder - Using custom data configuration default-6032b753b6ad095d
+12/19/2021 00:28:49 - INFO - datasets.builder - Overwrite dataset info from restored data version.
+12/19/2021 00:28:49 - INFO - datasets.info - Loading Dataset info from /home/zhangkechi/.cache/huggingface/datasets/json/default-6032b753b6ad095d/0.0.0/c2d554c3377ea79c7664b93dc65d0803b45e3279000f993c7bfd18937fd7f426
+12/19/2021 00:28:49 - WARNING - datasets.builder - Reusing dataset json (/home/zhangkechi/.cache/huggingface/datasets/json/default-6032b753b6ad095d/0.0.0/c2d554c3377ea79c7664b93dc65d0803b45e3279000f993c7bfd18937fd7f426)
+12/19/2021 00:28:49 - INFO - datasets.info - Loading Dataset info from /home/zhangkechi/.cache/huggingface/datasets/json/default-6032b753b6ad095d/0.0.0/c2d554c3377ea79c7664b93dc65d0803b45e3279000f993c7bfd18937fd7f426
+  0%|          | 0/2 [00:00<?, ?it/s]100%|██████████| 2/2 [00:00<00:00, 246.38it/s]
+[INFO|configuration_utils.py:604] 2021-12-19 00:28:51,737 >> loading configuration file https://huggingface.co/google/mt5-small/resolve/main/config.json from cache at /home/zhangkechi/.cache/huggingface/transformers/97693496c1a0cae463bd18428187f9e9924d2dfbadaa46e4d468634a0fc95a41.dadce13f8f85f4825168354a04675d4b177749f8f11b167e87676777695d4fe4
+[INFO|configuration_utils.py:641] 2021-12-19 00:28:51,740 >> Model config MT5Config {
+  "_name_or_path": "google/mt5-small",
+  "architectures": [
+    "MT5ForConditionalGeneration"
+  ],
+  "d_ff": 1024,
+  "d_kv": 64,
+  "d_model": 512,
+  "decoder_start_token_id": 0,
+  "dropout_rate": 0.1,
+  "eos_token_id": 1,
+  "feed_forward_proj": "gated-gelu",
+  "initializer_factor": 1.0,
+  "is_encoder_decoder": true,
+  "layer_norm_epsilon": 1e-06,
+  "model_type": "mt5",
+  "num_decoder_layers": 8,
+  "num_heads": 6,
+  "num_layers": 8,
+  "pad_token_id": 0,
+  "relative_attention_num_buckets": 32,
+  "tie_word_embeddings": false,
+  "tokenizer_class": "T5Tokenizer",
+  "transformers_version": "4.14.1",
+  "use_cache": true,
+  "vocab_size": 250112
+}
+
+[INFO|configuration_utils.py:604] 2021-12-19 00:28:54,725 >> loading configuration file https://huggingface.co/google/mt5-small/resolve/main/config.json from cache at /home/zhangkechi/.cache/huggingface/transformers/97693496c1a0cae463bd18428187f9e9924d2dfbadaa46e4d468634a0fc95a41.dadce13f8f85f4825168354a04675d4b177749f8f11b167e87676777695d4fe4
+[INFO|configuration_utils.py:641] 2021-12-19 00:28:54,727 >> Model config MT5Config {
+  "_name_or_path": "google/mt5-small",
+  "architectures": [
+    "MT5ForConditionalGeneration"
+  ],
+  "d_ff": 1024,
+  "d_kv": 64,
+  "d_model": 512,
+  "decoder_start_token_id": 0,
+  "dropout_rate": 0.1,
+  "eos_token_id": 1,
+  "feed_forward_proj": "gated-gelu",
+  "initializer_factor": 1.0,
+  "is_encoder_decoder": true,
+  "layer_norm_epsilon": 1e-06,
+  "model_type": "mt5",
+  "num_decoder_layers": 8,
+  "num_heads": 6,
+  "num_layers": 8,
+  "pad_token_id": 0,
+  "relative_attention_num_buckets": 32,
+  "tie_word_embeddings": false,
+  "tokenizer_class": "T5Tokenizer",
+  "transformers_version": "4.14.1",
+  "use_cache": true,
+  "vocab_size": 250112
+}
+
+[INFO|tokenization_utils_base.py:1742] 2021-12-19 00:29:00,764 >> loading file https://huggingface.co/google/mt5-small/resolve/main/spiece.model from cache at /home/zhangkechi/.cache/huggingface/transformers/37d0f67f084f8c5fc5589e0bba5ff3c6307af833bb0b7f4eb33fbfd8d4038a9d.84ea7af2df68dc8db434d3160aab65cce8ac63ce5b6f7743f8c9a4a14b4f77e2
+[INFO|tokenization_utils_base.py:1742] 2021-12-19 00:29:00,765 >> loading file https://huggingface.co/google/mt5-small/resolve/main/tokenizer.json from cache at None
+[INFO|tokenization_utils_base.py:1742] 2021-12-19 00:29:00,765 >> loading file https://huggingface.co/google/mt5-small/resolve/main/added_tokens.json from cache at None
+[INFO|tokenization_utils_base.py:1742] 2021-12-19 00:29:00,765 >> loading file https://huggingface.co/google/mt5-small/resolve/main/special_tokens_map.json from cache at /home/zhangkechi/.cache/huggingface/transformers/685ac0ca8568ec593a48b61b0a3c272beee9bc194a3c7241d15dcadb5f875e53.f76030f3ec1b96a8199b2593390c610e76ca8028ef3d24680000619ffb646276
+[INFO|tokenization_utils_base.py:1742] 2021-12-19 00:29:00,765 >> loading file https://huggingface.co/google/mt5-small/resolve/main/tokenizer_config.json from cache at /home/zhangkechi/.cache/huggingface/transformers/6a9e52d6dd21568e37b65fc180ada927968e8f7124f0acd6efcaf90cd2e0f4bb.4b81e5d952ad810ca1de2b3e362b9a26a5cc77b4b75daf20caf69fb838751c32
+[INFO|configuration_utils.py:604] 2021-12-19 00:29:02,744 >> loading configuration file https://huggingface.co/google/mt5-small/resolve/main/config.json from cache at /home/zhangkechi/.cache/huggingface/transformers/97693496c1a0cae463bd18428187f9e9924d2dfbadaa46e4d468634a0fc95a41.dadce13f8f85f4825168354a04675d4b177749f8f11b167e87676777695d4fe4
+[INFO|configuration_utils.py:641] 2021-12-19 00:29:02,745 >> Model config MT5Config {
+  "_name_or_path": "google/mt5-small",
+  "architectures": [
+    "MT5ForConditionalGeneration"
+  ],
+  "d_ff": 1024,
+  "d_kv": 64,
+  "d_model": 512,
+  "decoder_start_token_id": 0,
+  "dropout_rate": 0.1,
+  "eos_token_id": 1,
+  "feed_forward_proj": "gated-gelu",
+  "initializer_factor": 1.0,
+  "is_encoder_decoder": true,
+  "layer_norm_epsilon": 1e-06,
+  "model_type": "mt5",
+  "num_decoder_layers": 8,
+  "num_heads": 6,
+  "num_layers": 8,
+  "pad_token_id": 0,
+  "relative_attention_num_buckets": 32,
+  "tie_word_embeddings": false,
+  "tokenizer_class": "T5Tokenizer",
+  "transformers_version": "4.14.1",
+  "use_cache": true,
+  "vocab_size": 250112
+}
+
+[INFO|configuration_utils.py:604] 2021-12-19 00:29:05,547 >> loading configuration file https://huggingface.co/google/mt5-small/resolve/main/config.json from cache at /home/zhangkechi/.cache/huggingface/transformers/97693496c1a0cae463bd18428187f9e9924d2dfbadaa46e4d468634a0fc95a41.dadce13f8f85f4825168354a04675d4b177749f8f11b167e87676777695d4fe4
+[INFO|configuration_utils.py:641] 2021-12-19 00:29:05,549 >> Model config MT5Config {
+  "_name_or_path": "google/mt5-small",
+  "architectures": [
+    "MT5ForConditionalGeneration"
+  ],
+  "d_ff": 1024,
+  "d_kv": 64,
+  "d_model": 512,
+  "decoder_start_token_id": 0,
+  "dropout_rate": 0.1,
+  "eos_token_id": 1,
+  "feed_forward_proj": "gated-gelu",
+  "initializer_factor": 1.0,
+  "is_encoder_decoder": true,
+  "layer_norm_epsilon": 1e-06,
+  "model_type": "mt5",
+  "num_decoder_layers": 8,
+  "num_heads": 6,
+  "num_layers": 8,
+  "pad_token_id": 0,
+  "relative_attention_num_buckets": 32,
+  "tie_word_embeddings": false,
+  "tokenizer_class": "T5Tokenizer",
+  "transformers_version": "4.14.1",
+  "use_cache": true,
+  "vocab_size": 250112
+}
+
+Traceback (most recent call last):
+  File "main.py", line 480, in <module>
+    main()
+  File "main.py", line 293, in main
+    use_auth_token=True if model_args.use_auth_token else None,
+  File "/home/zhangkechi/anaconda3/envs/ccpm/lib/python3.7/site-packages/transformers/models/auto/tokenization_auto.py", line 531, in from_pretrained
+    return tokenizer_class.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+  File "/home/zhangkechi/anaconda3/envs/ccpm/lib/python3.7/site-packages/transformers/tokenization_utils_base.py", line 1751, in from_pretrained
+    **kwargs,
+  File "/home/zhangkechi/anaconda3/envs/ccpm/lib/python3.7/site-packages/transformers/tokenization_utils_base.py", line 1879, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+  File "/home/zhangkechi/anaconda3/envs/ccpm/lib/python3.7/site-packages/transformers/models/t5/tokenization_t5_fast.py", line 136, in __init__
+    **kwargs,
+  File "/home/zhangkechi/anaconda3/envs/ccpm/lib/python3.7/site-packages/transformers/tokenization_utils_fast.py", line 111, in __init__
+    fast_tokenizer = convert_slow_tokenizer(slow_tokenizer)
+  File "/home/zhangkechi/anaconda3/envs/ccpm/lib/python3.7/site-packages/transformers/convert_slow_tokenizer.py", line 982, in convert_slow_tokenizer
+    return converter_class(transformer_tokenizer).converted()
+  File "/home/zhangkechi/anaconda3/envs/ccpm/lib/python3.7/site-packages/transformers/convert_slow_tokenizer.py", line 421, in __init__
+    requires_backends(self, "protobuf")
+  File "/home/zhangkechi/anaconda3/envs/ccpm/lib/python3.7/site-packages/transformers/file_utils.py", line 802, in requires_backends
+    raise ImportError("".join([BACKENDS_MAPPING[backend][1].format(name) for backend in backends]))
+ImportError: 
+T5Converter requires the protobuf library but it was not found in your environment. Checkout the instructions on the
+installation page of its repo: https://github.com/protocolbuffers/protobuf/tree/master/python#installation and follow the ones
+that match your environment.
+
